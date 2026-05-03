@@ -1,0 +1,14 @@
+next.user-config.*
+
+.env
+.env*.local
+
+node_modules
+.next/
+out/
+.DS_Store
+*.tsbuildinfo
+.agents/
+.vscode/
+.claude/
+skills-lock.json
