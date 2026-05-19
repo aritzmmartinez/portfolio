@@ -44,7 +44,7 @@ const resources = {
           {
             company: "Ironchip",
             role: "Frontend and Mobility Developer",
-            period: "February 2025 – Present",
+            period: "February 2025 – May 2026",
             bullets: [
               "Developed and maintained an administration panel with new functionalities using React and TypeScript",
               "Integration of APIs for communication with internal services",
@@ -148,8 +148,8 @@ const resources = {
       hero: {
         roles: [
           "Desarrollador Full Stack",
-          "Details matter, simplicity wins",
-          "I ship things I believe in",
+          "Los detalles importan, la simplicidad gana",
+          "Construyo cosas en las que creo",
         ],
         viewWork: "Ver mi trabajo",
         getInTouch: "Contáctame",
@@ -176,7 +176,7 @@ const resources = {
           {
             company: "Ironchip",
             role: "Desarrollador Frontend y Mobility",
-            period: "Febrero 2025 – Presente",
+            period: "Febrero 2025 – Mayo 2026",
             bullets: [
               "Desarrollo y mantenimiento de un panel de administración con nuevas funcionalidades usando React y TypeScript",
               "Integración de APIs para comunicación con servicios internos",

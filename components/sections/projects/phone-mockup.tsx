@@ -23,36 +23,11 @@ export function PhoneMockup({ children }: PhoneMockupProps) {
               <span className="text-[9px] font-semibold text-white/90 leading-none">
                 9:41
               </span>
-              <div className="flex items-center gap-1.25">
-                <div className="flex items-end gap-[1.5px]">
-                  <div className="w-0.75 h-1 bg-white/90 rounded-[0.5px]" />
-                  <div className="w-0.75 h-1.5 bg-white/90 rounded-[0.5px]" />
-                  <div className="w-0.75 h-2 bg-white/90 rounded-[0.5px]" />
-                  <div className="w-0.75 h-2.5 bg-white/30 rounded-[0.5px]" />
+              <div className="flex items-center gap-px">
+                <div className="w-4.5 h-2.25 rounded-[2px] border border-white/60 p-[1.5px]">
+                  <div className="h-full w-[70%] bg-white/90 rounded-[1px]" />
                 </div>
-                <svg
-                  className="w-2.75 h-2.75 text-white/90"
-                  viewBox="0 0 24 24"
-                  fill="none"
-                  stroke="currentColor"
-                  strokeWidth="2.5"
-                  strokeLinecap="round"
-                >
-                  <path d="M1.5 8.5a15 15 0 0121 0M5 12a11 11 0 0114 0M8.5 15.5a7 7 0 017 0" />
-                  <circle
-                    cx="12"
-                    cy="19"
-                    r="1.5"
-                    fill="currentColor"
-                    stroke="none"
-                  />
-                </svg>
-                <div className="flex items-center gap-px">
-                  <div className="w-4.5 h-2.25 rounded-[2px] border border-white/60 p-[1.5px]">
-                    <div className="h-full w-[70%] bg-white/90 rounded-[1px]" />
-                  </div>
-                  <div className="w-0.5 h-1.25 bg-white/50 rounded-r-[1px]" />
-                </div>
+                <div className="w-0.5 h-1.25 bg-white/50 rounded-r-[1px]" />
               </div>
             </div>
 
