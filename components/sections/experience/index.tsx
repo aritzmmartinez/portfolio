@@ -9,7 +9,8 @@ interface WorkEntry {
   company: string;
   role: string;
   period: string;
-  bullets: string[];
+  bullets?: string[];
+  description?: string;
 }
 
 export function ExperienceSection() {
@@ -81,17 +82,27 @@ export function ExperienceSection() {
                             {entry.period}
                           </span>
                         </div>
-                        <ul className="space-y-2">
-                          {entry.bullets.map((bullet, i) => (
-                            <li
-                              key={i}
-                              className="flex gap-2.5 text-sm text-muted-foreground"
-                            >
-                              <span className="mt-2 h-1 w-1 shrink-0 rounded-full bg-muted-foreground" />
-                              {bullet}
-                            </li>
-                          ))}
-                        </ul>
+                        {entry.description ? (
+                          <div className="space-y-3">
+                            {entry.description.split("\n\n").map((para, i) => (
+                              <p key={i} className="text-sm text-muted-foreground leading-relaxed">
+                                {para}
+                              </p>
+                            ))}
+                          </div>
+                        ) : (
+                          <ul className="space-y-2">
+                            {entry.bullets?.map((bullet, i) => (
+                              <li
+                                key={i}
+                                className="flex gap-2.5 text-sm text-muted-foreground"
+                              >
+                                <span className="mt-2 h-1 w-1 shrink-0 rounded-full bg-muted-foreground" />
+                                {bullet}
+                              </li>
+                            ))}
+                          </ul>
+                        )}
                       </div>
                     </div>
                   </motion.div>
