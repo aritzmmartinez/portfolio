@@ -25,7 +25,7 @@ const resources = {
       // About Section
       about: {
         title: "About Me",
-        bio: "I'm a passionate Full Stack Developer who enjoys building clean, scalable, and well-structured applications. I like working on projects that follow good architecture practices and focus on maintainability, performance, and simplicity. Most of my repositories are based on real-world setups, boilerplates, and complete project structures. I'm always interested in exploring new tools, improving my coding practices, and understanding how things work under the hood.",
+        bio: "I'm a passionate Full Stack Developer who enjoys building clean, scalable, and well-structured applications following good architecture practices, with a focus on maintainability, performance, and simplicity. Most of my repositories are based on real-world setups, boilerplates, and complete project structures. I'm always interested in exploring new tools, improving my coding practices, and understanding how things work under the hood.",
         stats: {
           coding: "3+ years coding",
           location: "Bilbao, Spain",
@@ -44,21 +44,16 @@ const resources = {
           {
             company: "Ironchip",
             role: "Frontend and Mobility Developer",
-            period: "February 2025 – Present",
-            bullets: [
-              "Developed and maintained an administration panel with new functionalities using React and TypeScript",
-              "Integration of APIs for communication with internal services",
-              "Developed SDKs and templates using Go (Golang)",
-            ],
+            period: "February 2025 — May 2026",
+            description:
+              "At Ironchip, a cybersecurity company specializing in passwordless authentication and Identity & Access Management (IAM), I worked as a Frontend & Mobility Developer contributing to several layers of the product, within an Agile team.\n\nOn the frontend, I worked on the administration panel of their passwordless IAM platform (SaaS) — built with React and TypeScript — adding new features and maintaining modules for user, group and device management, conditional access policies, IP rules, permissions, location-based authentication and corporate customization.\n\nI also participated in the maintenance of a TypeScript SDK as a communication layer with backend services, and collaborated in the development of Go SDKs for desktop and mobile authenticators.",
           },
           {
             company: "Accenture",
-            role: "JAVA Developer",
-            period: "June 2022 – September 2024",
-            bullets: [
-              "Implemented new functionalities and maintained commercial systems",
-              "Created unit tests with JUnit 5 and code quality analysis with SonarQube",
-            ],
+            role: "Java Developer",
+            period: "June 2022 — September 2024",
+            description:
+              "At Accenture, I worked as a Java Developer on a project for a major energy sector client, contributing to the maintenance and evolution of commercial billing systems.\n\nI worked with Java and DB2 on backend systems, writing unit tests with JUnit 5 and Mockito, and maintaining code quality standards through SonarQube analysis, all within an Agile team.",
           },
         ],
       },
@@ -148,8 +143,8 @@ const resources = {
       hero: {
         roles: [
           "Desarrollador Full Stack",
-          "Details matter, simplicity wins",
-          "I ship things I believe in",
+          "Los detalles importan, la simplicidad gana",
+          "Construyo cosas en las que creo",
         ],
         viewWork: "Ver mi trabajo",
         getInTouch: "Contáctame",
@@ -157,7 +152,7 @@ const resources = {
       // About Section
       about: {
         title: "Sobre Mí",
-        bio: "Soy un desarrollador Full Stack apasionado con sede en País Vasco, España. Me encanta crear aplicaciones limpias, escalables y bien estructuradas siguiendo buenas prácticas de arquitectura. La mayoría de mis repositorios están basados en configuraciones del mundo real, boilerplates y estructuras completas de proyecto. Siempre estoy interesado en explorar nuevas herramientas y mejorar mis prácticas de desarrollo.",
+        bio: "Soy un desarrollador Full Stack apasionado al que le encanta construir aplicaciones limpias, escalables y bien estructuradas siguiendo buenas prácticas de arquitectura, con foco en la mantenibilidad, el rendimiento y la simplicidad. La mayoría de mis repositorios están basados en configuraciones del mundo real, boilerplates y estructuras completas de proyecto. Siempre me ha interesado explorar nuevas herramientas, mejorar mis prácticas de desarrollo y entender cómo funcionan las cosas por dentro.",
         stats: {
           coding: "3+ años programando",
           location: "Bilbao, Spain",
@@ -176,21 +171,16 @@ const resources = {
           {
             company: "Ironchip",
             role: "Desarrollador Frontend y Mobility",
-            period: "Febrero 2025 – Presente",
-            bullets: [
-              "Desarrollo y mantenimiento de un panel de administración con nuevas funcionalidades usando React y TypeScript",
-              "Integración de APIs para comunicación con servicios internos",
-              "Desarrollo de SDKs y plantillas usando Go (Golang)",
-            ],
+            period: "Febrero 2025 — Mayo 2026",
+            description:
+              "En Ironchip, empresa de ciberseguridad especializada en autenticación passwordless e Identity & Access Management (IAM), trabajé como desarrollador Frontend y Mobility contribuyendo a varias capas del producto, dentro de un equipo con metodologías ágiles.\n\nEn el frontend, trabajé sobre el panel de administración de su plataforma SaaS de autenticación passwordless e IAM — construido con React y TypeScript — añadiendo nuevas funcionalidades y manteniendo módulos de gestión de usuarios, grupos y dispositivos, control de acceso condicional, reglas de IP, permisos, autenticación basada en localización y personalización corporativa.\n\nTambién participé en el mantenimiento de un SDK en TypeScript como capa de comunicación con los servicios backend, y colaboré en el desarrollo de SDKs en Go para los autenticadores de escritorio y móvil.",
           },
           {
             company: "Accenture",
-            role: "Desarrollador JAVA",
-            period: "Junio 2022 – Septiembre 2024",
-            bullets: [
-              "Implementación de nuevas funcionalidades y mantenimiento de sistemas comerciales",
-              "Creación de tests unitarios con JUnit 5 y análisis de calidad de código con SonarQube",
-            ],
+            role: "Desarrollador Java",
+            period: "Junio 2022 — Septiembre 2024",
+            description:
+              "En Accenture, trabajé como desarrollador Java en un proyecto para un importante cliente del sector energético, contribuyendo al mantenimiento y evolución de sistemas comerciales de cobro.\n\nTrabajé con Java y DB2 en sistemas backend, escribiendo tests unitarios con JUnit 5 y Mockito, y manteniendo los estándares de calidad del código mediante análisis con SonarQube, todo ello dentro de un equipo con metodologías ágiles.",
           },
         ],
       },

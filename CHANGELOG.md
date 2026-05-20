@@ -7,6 +7,18 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [1.1.0] - 2026-05-20
+
+### Changed
+
+- Experience entries now use detailed prose descriptions instead of bullet points (EN + ES)
+- About bio rewritten for consistency (EN + ES)
+
+### Fixed
+
+- Hero roles now correctly translated to Spanish
+- Phone mockup status bar display
+
 ## [1.0.0] - 2026-05-03
 
 ### Added
@@ -20,5 +32,6 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - Infinite tech stack carousel
 - Responsive design
 
-[unreleased]: https://github.com/aritzmmartinez/portfolio/compare/v1.0.0...HEAD
+[unreleased]: https://github.com/aritzmmartinez/portfolio/compare/v1.1.0...HEAD
+[1.1.0]: https://github.com/aritzmmartinez/portfolio/compare/v1.0.0...v1.1.0
 [1.0.0]: https://github.com/aritzmmartinez/portfolio/releases/tag/v1.0.0
