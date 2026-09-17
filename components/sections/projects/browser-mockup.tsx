@@ -2,15 +2,10 @@
 
 interface BrowserMockupProps {
   children: React.ReactNode;
-  projectName: string;
   url?: string;
 }
 
-export function BrowserMockup({
-  children,
-  projectName,
-  url,
-}: BrowserMockupProps) {
+export function BrowserMockup({ children, url }: BrowserMockupProps) {
   return (
     <div className="relative rounded-lg border border-border bg-muted/30 overflow-hidden">
       <div className="flex items-center gap-2 px-3 py-2 border-b border-border bg-muted/50">
@@ -21,10 +16,11 @@ export function BrowserMockup({
         </div>
         <div className="flex-1 mx-3">
           <div className="h-5 rounded bg-background/50 flex items-center px-2">
-            <span className="text-[10px] text-muted-foreground truncate">
-              {url ??
-                `${projectName.toLowerCase().replace(/\s+/g, "-")}.vercel.app`}
-            </span>
+            {url && (
+              <span className="text-[10px] text-muted-foreground truncate">
+                {url}
+              </span>
+            )}
           </div>
         </div>
       </div>

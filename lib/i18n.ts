@@ -101,6 +101,16 @@ const resources = {
             description:
               "Personal portfolio showcasing a collection of projects built around real problems, clean interfaces, and attention to detail.",
           },
+          quoin: {
+            name: "Quoin",
+            description:
+              "An open-source portfolio tracker: allocation analysis, true look-through exposure, and tax support. Self-hosted, so your data never leaves your machine.",
+          },
+          libtraderepublic: {
+            name: "libtraderepublic",
+            description:
+              "A TypeScript library that turns Trade Republic's official transaction CSV export into a typed domain model.",
+          },
         },
       },
       // Contact Section
@@ -227,6 +237,16 @@ const resources = {
             name: "Portfolio",
             description:
               "Portfolio personal con una colección de proyectos construidos alrededor de problemas reales, interfaces limpias y atención al detalle.",
+          },
+          quoin: {
+            name: "Quoin",
+            description:
+              "Un gestor de carteras de código abierto: análisis de asignación, exposición real y compatibilidad fiscal. Se aloja en tu propio servidor, por lo que tus datos nunca salen de tu ordenador.",
+          },
+          libtraderepublic: {
+            name: "libtraderepublic",
+            description:
+              "Librería TypeScript que convierte el export oficial de transacciones de Trade Republic en un modelo de dominio tipado.",
           },
         },
       },

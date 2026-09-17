@@ -6,16 +6,23 @@ import { useTranslation } from "react-i18next";
 import { ExternalLink } from "lucide-react";
 import Image from "next/image";
 import { useTheme } from "next-themes";
-import type { Project, ProjectStatus } from "@/types";
+import type { Project, ProjectStatus, ProjectType } from "@/types";
 import { BrowserMockup } from "./browser-mockup";
 import { PhoneMockup } from "./phone-mockup";
 import { TechScroller } from "./tech-scroller";
+import { Tooltip } from "@/components/ui/tooltip";
 import { cn } from "@/lib/utils";
 
 interface ProjectCardProps {
   project: Project;
   index: number;
 }
+
+const featuredWidth: Record<ProjectType, string> = {
+  web: "sm:w-full lg:w-[66%]",
+  mobile: "",
+  library: "",
+};
 
 const statusConfig: Record<ProjectStatus, { labelKey: string }> = {
   live: { labelKey: "projects.status.live" },
@@ -30,44 +37,62 @@ export function ProjectCard({ project, index }: ProjectCardProps) {
   const [mounted, setMounted] = useState(false);
   useEffect(() => setMounted(true), []);
   const isMobile = project.type === "mobile";
+  const isLibrary = project.type === "library";
   const imageSrc =
     mounted && resolvedTheme === "dark" && project.imageDark
       ? project.imageDark
       : project.image;
   const status = project.status ? statusConfig[project.status] : null;
 
+  const screenshot = (className?: string) => (
+    <Image
+      src={imageSrc}
+      alt={t(project.nameKey)}
+      fill
+      className={cn("object-cover", className)}
+    />
+  );
+
+  function renderMockup(): React.JSX.Element {
+    switch (project.type) {
+      case "mobile":
+        return (
+          <PhoneMockup featured={project.featured}>{screenshot()}</PhoneMockup>
+        );
+      case "web":
+        return (
+          <BrowserMockup url={project.url}>
+            {screenshot(
+              "transition-transform duration-500 group-hover:scale-[1.02]",
+            )}
+          </BrowserMockup>
+        );
+      case "library":
+        return (
+          <div
+            className={`relative ${project.featured ? "aspect-4/3" : "aspect-16/10"} rounded-lg border border-border bg-muted/30 overflow-hidden`}
+          >
+            {screenshot(
+              "transition-transform duration-500 group-hover:scale-[1.02]",
+            )}
+          </div>
+        );
+    }
+  }
+
   return (
     <motion.div
-      layout
       initial={{ opacity: 0, y: 30 }}
       animate={{ opacity: 1, y: 0 }}
-      exit={{ opacity: 0, y: -20 }}
       transition={{ duration: 0.4, delay: index * 0.08 }}
       className={cn(
-        "group relative rounded-2xl border border-border bg-card overflow-hidden hover:border-muted-foreground/30 transition-all duration-300",
-        project.featured && "sm:col-span-2 lg:col-span-2",
+        "masonry-item group relative mb-6 inline-block w-full align-top sm:w-[49%] lg:w-[32%]",
+        "rounded-2xl border border-border bg-card overflow-hidden hover:border-muted-foreground/30 transition-all duration-300",
+        project.featured && featuredWidth[project.type],
       )}
     >
       <div className={`relative ${isMobile ? "p-6 pb-4 bg-muted/20" : ""}`}>
-        {isMobile ? (
-          <PhoneMockup>
-            <Image
-              src={imageSrc}
-              alt={t(project.nameKey)}
-              fill
-              className="object-cover"
-            />
-          </PhoneMockup>
-        ) : (
-          <BrowserMockup projectName={t(project.nameKey)} url={project.url}>
-            <Image
-              src={imageSrc}
-              alt={t(project.nameKey)}
-              fill
-              className="object-cover transition-transform duration-500 group-hover:scale-[1.02]"
-            />
-          </BrowserMockup>
-        )}
+        {renderMockup()}
       </div>
 
       <div className="p-5 space-y-4">
@@ -82,35 +107,53 @@ export function ProjectCard({ project, index }: ProjectCardProps) {
               </span>
             )}
           </div>
-          <p className="text-sm text-muted-foreground leading-relaxed line-clamp-2">
-            {t(project.descriptionKey)}
-          </p>
+          <Tooltip label={t(project.descriptionKey)}>
+            <p className="text-sm text-muted-foreground leading-relaxed line-clamp-2">
+              {t(project.descriptionKey)}
+            </p>
+          </Tooltip>
         </div>
 
         <TechScroller tech={project.tech} />
 
         <div className="flex items-center gap-3 pt-1">
-          {project.link && (
-            <a
-              href={project.link}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="inline-flex items-center gap-1.5 text-sm font-medium text-foreground hover:text-muted-foreground transition-colors"
-            >
-              {isMobile ? t("projects.appStore") : t("projects.viewProject")}
-              <ExternalLink className="h-3.5 w-3.5" />
-            </a>
-          )}
+          {project.link &&
+            (isLibrary ? (
+              <a
+                href={project.link}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center hover:opacity-70 transition-opacity"
+                aria-label="View on npm"
+              >
+                <svg className="h-5 w-5" viewBox="0 0 24 24" aria-hidden="true">
+                  <path
+                    fill="#CB3837"
+                    d="M1.763 0C.786 0 0 .786 0 1.763v20.474C0 23.214.786 24 1.763 24h20.474c.977 0 1.763-.786 1.763-1.763V1.763C24 .786 23.214 0 22.237 0zM5.13 5.323l13.837.019-.009 13.836h-3.464l.01-10.382h-3.456L12.04 19.17H5.113z"
+                  />
+                </svg>
+              </a>
+            ) : (
+              <a
+                href={project.link}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center gap-1.5 text-sm font-medium text-foreground hover:text-muted-foreground transition-colors"
+              >
+                {isMobile ? t("projects.appStore") : t("projects.viewProject")}
+                <ExternalLink className="h-3.5 w-3.5" />
+              </a>
+            ))}
           {project.github && (
             <a
               href={project.github}
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-flex items-center gap-1.5 text-sm text-muted-foreground hover:text-foreground transition-colors"
+              className="inline-flex items-center gap-1.5 text-sm text-foreground hover:text-muted-foreground transition-colors"
               aria-label="View on GitHub"
             >
               <svg
-                className="h-5 w-5 text-foreground"
+                className="h-5 w-5"
                 fill="currentColor"
                 viewBox="0 0 24 24"
                 aria-hidden="true"

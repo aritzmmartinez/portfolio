@@ -1,4 +1,4 @@
-export type ProjectType = "web" | "mobile";
+export type ProjectType = "web" | "mobile" | "library";
 export type FilterType = "all" | "web" | "mobile";
 export type ProjectStatus = "live" | "openSource" | "inDev" | "done";
 
