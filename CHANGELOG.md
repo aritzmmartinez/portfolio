@@ -7,6 +7,28 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [1.2.0] - 2026-09-17
+
+### Added
+
+- Quoin project card (open-source, local-first investment tracker)
+- libtraderepublic project card (first published npm package)
+- library project type, with its own snippet mockup instead of the browser chrome
+- npm icon linking to the package on library cards, replacing the text link
+- Masonry layout for the projects grid, so cards of different heights pack without leaving gaps
+- Tooltip with the full description on cards whose text is clipped, on hover and keyboard focus
+
+### Changed
+
+- Featured projects are signalled by size — double width for web cards, a
+  larger phone for mobile ones — instead of by grid spans
+- GitHub icon now dims on hover like the rest of the card actions
+
+### Fixed
+
+- Browser mockup no longer guesses a live URL for projects without a public demo
+- Spanish project descriptions no longer fall back to their translation key
+
 ## [1.1.0] - 2026-05-20
 
 ### Changed
@@ -32,6 +54,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - Infinite tech stack carousel
 - Responsive design
 
-[unreleased]: https://github.com/aritzmmartinez/portfolio/compare/v1.1.0...HEAD
+[unreleased]: https://github.com/aritzmmartinez/portfolio/compare/v1.2.0...HEAD
+[1.2.0]: https://github.com/aritzmmartinez/portfolio/compare/v1.1.0...v1.2.0
 [1.1.0]: https://github.com/aritzmmartinez/portfolio/compare/v1.0.0...v1.1.0
 [1.0.0]: https://github.com/aritzmmartinez/portfolio/releases/tag/v1.0.0

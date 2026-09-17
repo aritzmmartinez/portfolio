@@ -2,11 +2,14 @@
 
 interface PhoneMockupProps {
   children: React.ReactNode;
+  featured?: boolean;
 }
 
-export function PhoneMockup({ children }: PhoneMockupProps) {
+export function PhoneMockup({ children, featured }: PhoneMockupProps) {
   return (
-    <div className="relative mx-auto w-full max-w-50">
+    <div
+      className={`relative mx-auto w-full ${featured ? "max-w-64" : "max-w-50"}`}
+    >
       <div className="absolute -left-0.75 top-12.5 w-0.75 h-4 bg-foreground/20 rounded-l-sm" />
       <div className="absolute -left-0.75 top-19 w-0.75 h-6 bg-foreground/20 rounded-l-sm" />
       <div className="absolute -left-0.75 top-27.5 w-0.75 h-6 bg-foreground/20 rounded-l-sm" />

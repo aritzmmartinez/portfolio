@@ -1,10 +1,11 @@
 "use client";
 
 import { useState, useRef } from "react";
-import { motion, AnimatePresence, useInView } from "framer-motion";
+import { motion, useInView } from "framer-motion";
 import { useTranslation } from "react-i18next";
 import type { FilterType } from "@/types";
 import { projects } from "@/data/projects";
+import { useMasonry } from "@/hooks/use-masonry";
 import { ProjectCard } from "./project-card";
 import { FilterButton } from "./filter-button";
 
@@ -18,6 +19,8 @@ export function ProjectsSection() {
     if (filter === "all") return true;
     return project.type === filter;
   });
+
+  const gridRef = useMasonry([filter]);
 
   return (
     <section id="projects" className="py-24 md:py-32" ref={ref}>
@@ -61,13 +64,13 @@ export function ProjectsSection() {
           </FilterButton>
         </motion.div>
 
-        <motion.div layout className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
-          <AnimatePresence mode="popLayout">
-            {filteredProjects.map((project, index) => (
-              <ProjectCard key={project.id} project={project} index={index} />
-            ))}
-          </AnimatePresence>
-        </motion.div>
+        <div ref={gridRef} className="relative">
+          <div className="masonry-sizer w-full sm:w-[49%] lg:w-[32%]" />
+          <div className="masonry-gutter w-0 sm:w-[2%]" />
+          {filteredProjects.map((project, index) => (
+            <ProjectCard key={project.id} project={project} index={index} />
+          ))}
+        </div>
       </div>
     </section>
   );
