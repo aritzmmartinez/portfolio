@@ -66,6 +66,8 @@ export function Tooltip({ label, children }: TooltipProps) {
     };
   }, [open]);
 
+  // ref is forwarded to the cloned child, not read during render
+  // eslint-disable-next-line react-hooks/refs
   const trigger = cloneElement(children, {
     ref: triggerRef,
     ...(truncated && {
