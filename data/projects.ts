@@ -12,6 +12,7 @@ export const projects: Project[] = [
     url: "localhost",
     link: "",
     github: "https://github.com/aritzmmartinez/quoin",
+    docker: "https://hub.docker.com/r/aritzmmartinez/quoin",
     status: "openSource",
     featured: true,
   },

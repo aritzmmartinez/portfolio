@@ -13,6 +13,7 @@ export interface Project {
   url?: string;
   link?: string;
   github?: string;
+  docker?: string;
   status?: ProjectStatus;
   featured?: boolean;
 }

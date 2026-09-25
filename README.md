@@ -17,9 +17,9 @@ Personal portfolio built with Next.js 16, React 19, and Tailwind CSS v4.
 ## Getting started
 
 ```bash
-npm install
+pnpm install
 cp .env.example .env.local
-npm run dev
+pnpm dev
 ```
 
 ## Environment variables

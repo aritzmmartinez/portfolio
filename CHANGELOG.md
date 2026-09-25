@@ -7,6 +7,17 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [1.3.0] - 2026-09-25
+
+### Added
+
+- Docker Hub icon on the Quoin card, linking to the published image
+- ESLint flat config extending next/core-web-vitals and next/typescript, so the lint script finally runs
+
+### Changed
+
+- pnpm replaces npm as the package manager, pinned via the packageManager field
+
 ## [1.2.0] - 2026-09-17
 
 ### Added
@@ -20,8 +31,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### Changed
 
-- Featured projects are signalled by size — double width for web cards, a
-  larger phone for mobile ones — instead of by grid spans
+- Featured projects are signalled by size — double width for web cards, a larger phone for mobile ones — instead of by grid spans
 - GitHub icon now dims on hover like the rest of the card actions
 
 ### Fixed
@@ -54,7 +64,8 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - Infinite tech stack carousel
 - Responsive design
 
-[unreleased]: https://github.com/aritzmmartinez/portfolio/compare/v1.2.0...HEAD
+[unreleased]: https://github.com/aritzmmartinez/portfolio/compare/v1.3.0...HEAD
+[1.3.0]: https://github.com/aritzmmartinez/portfolio/compare/v1.2.0...v1.3.0
 [1.2.0]: https://github.com/aritzmmartinez/portfolio/compare/v1.1.0...v1.2.0
 [1.1.0]: https://github.com/aritzmmartinez/portfolio/compare/v1.0.0...v1.1.0
 [1.0.0]: https://github.com/aritzmmartinez/portfolio/releases/tag/v1.0.0
